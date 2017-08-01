@@ -1,0 +1,11 @@
+#!/bin/bash
+python3 - << EOF
+import py_compile
+py_compile.compile("$PYFILE")
+EOF
+export DUD='c'
+export PREPEND=$(echo $PYFILE | cut -d'.' -f1)
+export PYC=__pycache__/$PREPEND.cpython-34.pyc
+export PYFILEC=$PYFILE$DUD
+mv $PYC $PYFILEC
+rm -r __pycache__
