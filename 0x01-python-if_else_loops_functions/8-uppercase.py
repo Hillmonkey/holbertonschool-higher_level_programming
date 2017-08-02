@@ -17,5 +17,5 @@ def uppercase(str):
             newc = chr(ord(c) + offset)
         else:
             newc = c
-        print(newc, end='')
+        print("{:s}".format(newc), end='')
     print('')
