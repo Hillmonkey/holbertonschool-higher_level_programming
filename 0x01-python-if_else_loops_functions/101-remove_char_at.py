@@ -9,6 +9,4 @@ def remove_char_at(str, n):
     elif n == len(str) - 1:
         return str[:n]
     else:
-        pre = str[:n]
-        post = str[n+1:]
         return str[:n] + str[n+1:]
