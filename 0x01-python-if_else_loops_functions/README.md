@@ -1,4 +1,4 @@
-# 0x00. Python - If/Else Loops & Functions
+# 0x01. Python - If/Else Loops & Functions
 
 ### Learning to code with [Larry Madeo](https://twitter.com/larmalade)
 
