@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-from calculator_1 import add, sub, mul, div
-from sys import argv, exit
-
 if __name__ == "__main__":
+
+    from calculator_1 import add, sub, mul, div
+    from sys import argv, exit
+
     argc = len(argv)
     ops = {"+": add, "-": sub, "*": mul, "/": div}
 
