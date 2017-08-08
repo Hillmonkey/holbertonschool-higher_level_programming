@@ -4,6 +4,8 @@
 def print_matrix_integer(matrix=[[]]):
     ''' print a matrix aka 2d array of integers
     '''
+	if len(matrix) == 1 and len(matrix[0] = 0):
+        print()
     if matrix is not None and matrix[0] is not None:
         for inner in matrix:
             for i, n in enumerate(inner):
