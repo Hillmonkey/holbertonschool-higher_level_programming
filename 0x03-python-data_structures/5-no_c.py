@@ -7,8 +7,4 @@ def no_c(my_string):
 
     if my_string is None:
         return (my_string)
-    new_str = ""
-    for ch in my_string:
-        if ch != "c" and ch != "C":
-            new_str += ch
-    return new_str
+    return "".join([ch if ch not in "Cc" else "" for ch in my_string])
