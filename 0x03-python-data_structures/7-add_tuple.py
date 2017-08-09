@@ -4,12 +4,11 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     ''' returns tuple with two sums
     '''
-    zed = (0, 0)
     new_list = [0, 0]
     if len(tuple_a) == 0:
-        tuple_a = zed
+        tuple_a = (0, 0)
     if len(tuple_b) == 0:
-        tuple_b = zed
+        tuple_b = (0, 0)
 
     if len(tuple_a) == 1:
         tuple_a = tuple_a + (0,)
