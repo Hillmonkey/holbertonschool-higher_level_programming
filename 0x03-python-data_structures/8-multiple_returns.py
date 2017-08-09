@@ -7,6 +7,8 @@ def multiple_returns(sentence):
     second el: first char of sentence
     '''
 
+    if sentence is None:
+        return (0, None)
     if len(sentence) == 0:
         first_char is None
     else:
