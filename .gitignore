@@ -4,3 +4,5 @@ main.py
 *.pyc
 *.swp
 *.swo
+*OLD.py
+*ATTEMPT.py
