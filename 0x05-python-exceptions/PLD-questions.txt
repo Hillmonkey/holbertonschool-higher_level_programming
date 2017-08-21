@@ -1,0 +1,9 @@
+* Can we review the finally part of try/except/finally ??
+
+* I created a solution to #2 that avoided all errors, what do you think of that???
+
+* What about requiring the use of pull requests on GitHub, as per comments of
+    recent Holberton graduates?
+
+* Andrew - Can you give a demo of speed testing?  And why should this handler
+    be freshly created inside each loop?
