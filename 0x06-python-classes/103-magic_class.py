@@ -2,7 +2,6 @@
 ''' this comment takes up one line '''
 import math
 
-
 class MagicClass:
     ''' class: MagicClass  cuz it is'''
 
@@ -17,6 +16,6 @@ class MagicClass:
         ''' calculate area of circle'''
         return self.__radius**2 * math.pi
 
-    def circumfrence(self):
+    def circumference(self):
         '''calculate circumfrence of circle'''
         return 2 * math.pi * self.__radius
