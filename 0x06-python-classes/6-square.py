@@ -9,8 +9,8 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         '''init method of class Square
         '''
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -71,5 +71,8 @@ class Square:
         self.__position = value
 
 if __name__ == "__main__":
-    for el in dir(Square):
-        print(el)
+    try:
+        my_square = Square(3, "Position")
+        print(my_square.__dict__)
+    except Exception as e:
+        print(e)
