@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ''' this comment takes up one line '''
-import math, dis
+import math
 
 
 class MagicClass:
@@ -20,5 +20,3 @@ class MagicClass:
     def circumfrence(self):
         '''calculate circumfrence of circle'''
         return 2 * math.pi * self.__radius
-
-dis.dis(MagicClass)
