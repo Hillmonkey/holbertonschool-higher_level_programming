@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-''' this comment takes up one line '''
 import math
+
 
 class MagicClass:
     ''' class: MagicClass  cuz it is'''
