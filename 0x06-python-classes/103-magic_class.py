@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 ''' this comment takes up one line '''
-import math
+import math, dis
 
 
 class MagicClass:
     ''' class: MagicClass  cuz it is'''
 
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         ''' initialize MagicClass '''
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
@@ -20,3 +20,5 @@ class MagicClass:
     def circumfrence(self):
         '''calculate circumfrence of circle'''
         return 2 * math.pi * self.__radius
+
+dis.dis(MagicClass)
