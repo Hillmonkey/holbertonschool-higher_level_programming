@@ -28,15 +28,6 @@ class Square:
         return self.__size**2
 
     def my_print(self):
-        err_msg = "position must be a tuple of 2 positive integers"
-        if self.__position is None:
-            self.__position = (0, 0)
-        if type(self.__position) != tuple or len(self.__position) != 2:
-            self.__position = (0, 0)
-        if type(self.__position[0]) != int or type(self.__position[1]) != int:
-            self.__position = (0, 0)
-        if self.__position[0] < 0 or self.__position[1] < 0:
-            self.__position = (0, 0)
         if self.__size == 0:
             print()
             return
