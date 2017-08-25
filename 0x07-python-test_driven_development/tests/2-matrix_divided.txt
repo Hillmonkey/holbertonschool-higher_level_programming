@@ -1,3 +1,8 @@
+=========================================================================
+Larry’s wack tests - no warranty(sp?) implied or otherwise
+Usage of these tests contractually obliges you to buy me coffee and lunch.
+Thanks!!
+=========================================================================
 
 ### importing function to be tested
 >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
@@ -36,28 +41,48 @@ Traceback (most recent call last):
              ...
 TypeError: Each row of the matrix must have the same size
 
-# change the matrix to be symmetrical, but has a string
->>> matrix = [[1, 'hi', 2], [5, 7, 8]]
-###
-### Look at TEST2 - something is wrong here ...
-###
+# create matrix containing a string,
+>>> matrix_w_string = [[1, 'hi', 2], [5, 7, 8]]
 
 # input of new matrix that includes strings
->>> print(matrix_divided(matrix, 6))
+>>> print(matrix_divided(matrix_w_string, 6))
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 # matrix is None
 >>> print(matrix_divided(None, 2))
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# matrix includes True and False
->>> matrix = [[True, False], [1, 0]]
+# matrix where one row contains booleans
+>>> matrixTF = [[True, False], [1, 0]]
 
-print(matrix_divided(matrix, 2))
+>>> print(matrix_divided(matrixTF, 2))
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 # no arguments
 >>> print(matrix_divided())
+Traceback (most recent call last):
+        ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 # extra args
 >>> print(matrix_divided(matrix, 2, "well hello there"))
+Traceback (most recent call last):
+        ...
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
 
 # True is passed instead of matrix
 >>> print(matrix_divided(True, 2))
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+======================================
+End of wack tests
+======================================
+
