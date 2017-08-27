@@ -51,8 +51,12 @@ def matrix_divided(matrix, div):
     for i, el in enumerate(matrix):
         new_matrix.append([])
         for num in el:
+            if num / div > 0:
+                bump = 0.5
+			else:
+                bump = -0.5
             #  append num/div rounded to two decimal places
-            new_matrix[i].append((int((num / div) * 100 + 0.5)) / 100)
+            new_matrix[i].append((int((num / div) * 100 + bump)) / 100)
     if new_matrix == []:
         new_matrix = [[]]
     return new_matrix
