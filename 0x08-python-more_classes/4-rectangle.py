@@ -90,3 +90,12 @@ class Rectangle:
             if idx + 1 < self.__height:
                 ret_str += '\n'
         return ret_str
+
+    def __repr__(self):
+        '''method: __repr)__
+        return: representation of rectangle that can be used by eval() to
+                create new object
+        '''
+        ret_str = "Rectangle(" + str(self.__width) + ","
+        ret_str += str(self.__height) + ")"
+        return ret_str
