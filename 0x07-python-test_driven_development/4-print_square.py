@@ -21,7 +21,7 @@ def print_square(size):
     if not isinstance(size, int) or isinstance(size, bool):
             raise TypeError(err_msg["NaInt"])
     if size < 0:
-        raise TypeError(err_msg["LTzero"])
+        raise ValueError(err_msg["LTzero"])
 
     #  PRINT SQUARE  #
     for i in range(size):
