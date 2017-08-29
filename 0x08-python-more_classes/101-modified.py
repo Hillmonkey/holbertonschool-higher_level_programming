@@ -7,7 +7,7 @@ def reject(board):
     False, also one Queen cant attack herself ...
     '''
     if len(board) == 1:
-        return True
+        return False
     for col_A in board:
         for col_B in board:
             if not col_A is col_B:
@@ -42,7 +42,7 @@ def isdone(board):
         return True
     # print("DEBUG: isdone:", end='')
     # print(board[-1][1])
-    if board[-1][1] > board_size:
+    if board[-1][1] >= board_size:
         return True
     else:
         return False
