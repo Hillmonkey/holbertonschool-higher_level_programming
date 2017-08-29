@@ -6,14 +6,15 @@ import sys
 def reject(board):
     for col_A in board:
         for col_B in board:
-            if col_A[0] == col_B[0]:
-                return True
-            if col_A[1] == col_B[1]:
-                return True
-            if col_A[1] - col_A[0] == col_B[1] - col_B[0]:
-                return True
-            if col_A[0] + col_A[1] == col_B[0] + col_B[1]:
-                return True
+            if not col_A is col_B:
+                if col_A[0] == col_B[0]:
+                    return True
+                if col_A[1] == col_B[1]:
+                    return True
+                if col_A[1] - col_A[0] == col_B[1] - col_B[0]:
+                    return True
+                if col_A[0] + col_A[1] == col_B[0] + col_B[1]:
+                    return True
     return False
 
 def accept(board):
@@ -26,10 +27,10 @@ def print_board(board):
     print(str(board))
 
 def first(board):
-    print("DEBUG: def first()")
-    print("pre-board: {}".format(board))
+    # print("DEBUG: def first()")
+    # print("pre-board: {}".format(board))
     board.append([len(board), 0])
-    print("post-board: {}".format(board))
+    # print("post-board: {}".format(board))
     return board
 
 def isdone(board):
@@ -37,7 +38,7 @@ def isdone(board):
         return True
     # print("DEBUG: isdone:", end='')
     # print(board[-1][1])
-    if board[-1][1] == board_size:
+    if board[-1][1] > board_size:
         return True
     else:
         return False
@@ -54,7 +55,8 @@ def bt(board):
         return
     if accept(board):
         print_board(board)
-    new_board = first(board)
+    if len(board) < board_size - 1:
+        new_board = first(board)
     # print("DEBUG: new_board = {}".format(new_board))
     while not isdone(new_board):
         print("DEBUG: bt() while {}".format(board))
