@@ -3,6 +3,11 @@
 '''
 
 def reject(board):
+    ''' if the queens are attacking each other, return True, otherwise return
+    False, also one Queen cant attack herself ...
+    '''
+    if len(board) == 1:
+        return True
     for col_A in board:
         for col_B in board:
             if not col_A is col_B:
@@ -54,7 +59,7 @@ def bt(board):
         return
     if accept(board):
         print_board(board)
-    if len(board) < board_size - 1:
+    if len(board) < board_size:
         new_board = first(board)
     # print("DEBUG: new_board = {}".format(new_board))
     while not isdone(new_board):
