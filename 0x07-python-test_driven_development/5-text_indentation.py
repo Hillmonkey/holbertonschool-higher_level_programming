@@ -19,7 +19,7 @@ def text_indentation(text):
     new_line = True
 
     for ch in text:
-        if new_line == True:
+        if new_line is True:
             if ch not in white_space:
                 print(ch, end='')
                 new_line = False
