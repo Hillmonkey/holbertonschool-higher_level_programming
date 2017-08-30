@@ -15,12 +15,17 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     delims = {".", "?", ":"}
-    new_line = False
+    white_space = {" ", "\t", "\r"}
+    new_line = True
+
     for ch in text:
-        if ch in delims:
+        if new_line == True:
+            if ch not in white_space:
+                print(ch, end='')
+                new_line = False
+        elif ch in delims:
             print("{}\n".format(ch))
             new_line = True
         else:
-            if not(new_line and ch == ' '):
-                print(ch, end='')
+            print(ch, end='')
             new_line = False
