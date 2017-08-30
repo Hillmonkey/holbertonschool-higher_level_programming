@@ -14,7 +14,7 @@ def text_indentation(text):
     if type(text) != str:
         raise TypeError("text must be a string")
 
-    delims = {".", "?", ":"}
+    delims = {".", "?", ","}
     white_space = {" ", "\t", "\r"}
     new_line = True
 
