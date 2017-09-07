@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' module: 9-base_geometry
+''' module: 9-rectangle
 '''
 
 
@@ -24,7 +24,7 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    ''' Class: BaseGeometry
+    ''' Class: Rectangle 
     inherits from BaseGeometry
     '''
     def __init__(self, width, height):
