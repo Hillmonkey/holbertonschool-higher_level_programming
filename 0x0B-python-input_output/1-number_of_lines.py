@@ -6,7 +6,7 @@
 def number_of_lines(filename=""):
     ''' function: number_of_lines
     '''
-    if filename = "" type(filename) != str:
+    if filename = "" or type(filename) != str:
         return 0
     counter = 0
     with open(filename, 'r') as f:
