@@ -1,4 +1,4 @@
-# 0x09. Python - Everything is an Object 
+# 0x0A. Python - Inheritance
 
 ### Learning to code with [Larry Madeo](https://twitter.com/larmalade)
 
