@@ -24,7 +24,7 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    ''' Class: Rectangle 
+    ''' Class: Rectangle
     inherits from BaseGeometry
     '''
     def __init__(self, width, height):
