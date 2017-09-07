@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' module: 7-base_geometry
+''' module: 8-base_geometry
 '''
 
 
