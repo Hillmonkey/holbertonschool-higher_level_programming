@@ -8,6 +8,5 @@ def save_to_json_file(my_obj, filename):
     ''' function: save_to_json_file
     accepts Python object and sends JSON representation to file
     '''
-    json_string = json.dumps(my_obj)
     with open(filename, 'w') as f:
-        f.write(json_string)
+        f.write(json.dumps(my_obj)
