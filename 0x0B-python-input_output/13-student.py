@@ -29,8 +29,8 @@ class Student:
 
     def reload_from_json(self, json):
         '''method: reload_from_json
+        accepts: json (always a dict)
         '''
-        jdict = json.loads(json)
-        self.first_name = jdict["first_name"]
-        self.last_name = jdict["last_name"]
-        self.age = int(jdict["age"])
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = int(json["age"])
