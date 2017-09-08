@@ -17,10 +17,12 @@ class Student:
     def to_json(self, attrs=None):
         '''method: to_json
         '''
-        full_dict = self.__dict__
+        full_dict = {}
+        for key, value in self.__dict__.items():
+            full_dict[key] = value
         keys = list(full_dict.keys())
         if attrs is not None:
             for key in keys:
-                if key in attrs:
+                if key not in attrs:
                     del full_dict[key]
         return full_dict
