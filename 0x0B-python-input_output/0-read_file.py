@@ -6,7 +6,7 @@
 def read_file(filename=""):
     ''' function: read_file
     '''
-    if filename = "" or type(filename) != str:
+    if filename == "" or type(filename) is not str:
         return
     with open(filename, 'r') as f:
         for line in f:
