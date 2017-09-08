@@ -10,6 +10,5 @@ def save_to_json_file(my_obj, filename):
     '''
     if type(filename) is not str:
         return
-    json_string = json.dumps(my_obj)
     with open(filename, 'w') as f:
         f.write(json_string)
