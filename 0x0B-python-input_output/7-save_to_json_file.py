@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 ''' module: 7-save_to_jason_file.py
 '''
-
 import json
 
 
@@ -11,7 +10,6 @@ def save_to_json_file(my_obj, filename):
     '''
     if type(filename) is not str:
         return
-    json_string = json.dumps(my_obj)
+    # json_string = json.dumps(my_obj)
     with open(filename, 'w') as f:
         f.write(json_string)
-        f.close
