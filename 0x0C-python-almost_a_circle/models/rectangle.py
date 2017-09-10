@@ -34,17 +34,27 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    '''
     def update(self, *args):
-        ''' method: update
+         method: update
         accepts variable length list of variables, updates attributes
-        '''
+ 
         RD = {0: self.id, 1: self._width, 2: self._height, 3: self._x,
               4: self._y}
         for idx, el in enumerate(args):
             # print(RD[idx])
             RD[idx] = el
             # print(RD[idx])
-            
+    '''
+    def update(self, *args):
+        for idx, el in enumerate(args):
+            if idx == 0:
+                self.id = el
+            elif idx == 1:
+                self._width == el
+            elif idx == 2:
+                self._height == el
+ 
     def __str__(self):
         ''' method: __str__
         '''
