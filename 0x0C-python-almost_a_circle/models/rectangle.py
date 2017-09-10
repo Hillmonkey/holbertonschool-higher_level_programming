@@ -41,10 +41,9 @@ class Rectangle(Base):
         RD = {0: self.id, 1: self._width, 2: self._height, 3: self._x,
               4: self._y}
         for idx, el in enumerate(args):
-
-            print(RD[idx])
+            # print(RD[idx])
             RD[idx] = el
-            print(RD[idx])
+            # print(RD[idx])
             
     def __str__(self):
         ''' method: __str__
