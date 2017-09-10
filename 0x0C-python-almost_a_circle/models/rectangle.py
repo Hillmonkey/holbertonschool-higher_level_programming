@@ -7,7 +7,7 @@ class Base:
     '''class: Base
     '''
 
-    __nb_objects = 0
+    _nb_objects = 0
 
     def __init__(self, id=None):
         ''' method: __init__
@@ -15,8 +15,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            Base._nb_objects += 1
+            self.id = Base._nb_objects
             # print("DEBUG:__init__, else case")
 
 
@@ -28,35 +28,43 @@ class Rectangle(Base):
         '''method: __init__
         rectangle instantiator
         '''
-        self.integer_GT_zero("width", width)
-        self.integer_GT_zero("height", height)
-        self.integer_GTE_zero("x", x)
-        self.integer_GTE_zero("y", y)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
+    def update(self, *args):
+        ''' method: update
+        accepts variable length list of variables, updates attributes
+        '''
+        RD = {0: self.id, 1: self._width, 2: self._height, 3: self._x,
+              4: self._y}
+        for idx, el in enumerate(args):
+
+            print(RD[idx])
+            RD[idx] = el
+            print(RD[idx])
+            
     def __str__(self):
         ''' method: __str__
         '''
-        return ("({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y,
-                self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self._x, self._y,
+                self._width, self._height))
 
     def area(self):
         '''public_method: area
         returns area of rectangle
         '''
-        return self.__width * self.__height
+        return self._width * self._height
 
     def display(self):
         '''public method: display
         prints ascii respresentation of a rectangle to stdout
         '''
-        print("\n" * (self.__y), end="")
-        for i in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
+        print("\n" * (self._y), end="")
+        for i in range(self._height):
+            print(" " * self._x + "#" * self._width)
 
     def integer_GT_zero(self, name, value):
         '''public_method: integer_GT_zero
@@ -84,16 +92,16 @@ class Rectangle(Base):
     def width(self):
         ''' method: width getter
         '''
-        return self.__width
+        return self._width
 
     @width.setter
     def width(self, width):
         '''method: width setter
         '''
-        # self.integer_GT_zero("width", width)
+        self.integer_GT_zero("width", width)
         # print("width.setter")
         # integer_GT_zero("width", width)
-        self.__width = width
+        self._width = width
 
     @property
     def height(self):
@@ -105,31 +113,31 @@ class Rectangle(Base):
     def height(self, height):
         ''' method: height getter
         '''
-        # integer_GT_zero("height", height)
-        self.__height = height
+        self.integer_GT_zero("height", height)
+        self._height = height
 
     @property
     def x(self):
         ''' method: x getter
         '''
-        return self.__x
+        return self._x
 
     @x.setter
     def x(self, x):
         ''' method: x setter
         '''
-        # integer_GTE_zero("x", x)
-        self.__x = x
+        self.integer_GTE_zero("x", x)
+        self._x = x
 
     @property
     def y(self):
         ''' method y getter
         '''
-        return self.__y
+        return self._y
 
     @y.setter
     def y(self, y):
         ''' method y setter
         '''
-        # integer_GTE_zero("y", y)
-        self.__y = y
+        self.integer_GTE_zero("y", y)
+        self._y = y
