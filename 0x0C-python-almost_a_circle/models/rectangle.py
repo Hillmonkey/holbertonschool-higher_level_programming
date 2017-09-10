@@ -17,7 +17,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-            print("DEBUG:__init__, else case")
+            # print("DEBUG:__init__, else case")
 
 
 class Rectangle(Base):
@@ -25,7 +25,7 @@ class Rectangle(Base):
     '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        ''' __init__
+        '''method: __init__
         rectangle instantiator
         '''
         self.integer_GT_zero("width", width)
@@ -38,8 +38,22 @@ class Rectangle(Base):
         self.__y = y
         super().__init__(id)
 
+    def area(self):
+        '''public_method: area
+        returns area of rectangle
+        '''
+        return self.__width * self.__height
+
+    def display(self):
+        '''public method: display
+        prints ascii respresentation of a rectangle to stdout
+        '''
+        for i in range(self.__height):
+            print("#" * self.__width)
+
     def integer_GT_zero(self, name, value):
-        '''public_method
+        '''public_method: integer_GT_zero
+        validates value is int > zero
         name: always a string
         value: positive integer
         '''
@@ -49,7 +63,8 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(name))
 
     def integer_GTE_zero(self, name, value):
-        '''public_method
+        '''public_method: integer_GTE_zero
+        validates value is int >= zero
         name: always a string
         value: positive integer, or ZERO
         '''
@@ -68,7 +83,8 @@ class Rectangle(Base):
     def width(self, width):
         '''method: width setter
         '''
-        print("width.setter")
+        # self.integer_GT_zero("width", width)
+        # print("width.setter")
         # integer_GT_zero("width", width)
         self.__width = width
 
