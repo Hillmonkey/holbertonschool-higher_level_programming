@@ -38,6 +38,11 @@ class Rectangle(Base):
         self.__y = y
         super().__init__(id)
 
+    def __str__(self):
+        ''' method: __str__
+        '''
+        return ("({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y,
+              self.__width, self.__height))
     def area(self):
         '''public_method: area
         returns area of rectangle
