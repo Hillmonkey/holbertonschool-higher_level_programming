@@ -42,7 +42,8 @@ class Rectangle(Base):
         ''' method: __str__
         '''
         return ("({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y,
-              self.__width, self.__height))
+                self.__width, self.__height))
+
     def area(self):
         '''public_method: area
         returns area of rectangle
@@ -53,8 +54,9 @@ class Rectangle(Base):
         '''public method: display
         prints ascii respresentation of a rectangle to stdout
         '''
+        print("\n" * (self.__y), end="")
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def integer_GT_zero(self, name, value):
         '''public_method: integer_GT_zero
