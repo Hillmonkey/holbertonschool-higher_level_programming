@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' file/module base
+''' module: rectangle
 '''
 
 from models.base import Base
@@ -89,8 +89,6 @@ class Rectangle(Base):
         '''method: width setter
         '''
         self.integer_GT_zero("width", width)
-        # print("width.setter")
-        # integer_GT_zero("width", width)
         self.__width = width
 
     @property
