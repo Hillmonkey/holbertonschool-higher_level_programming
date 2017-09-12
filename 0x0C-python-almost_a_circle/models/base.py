@@ -18,6 +18,29 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''method: save_to_file
+        accepts: list of objects that inherit from  base class
+        writes JSON representation to file in following format:
+        '''
+        #from objects, build dict representations and put them in a new list
+        list_dicts = []
+        for obj in list_objs:
+            tmp_dict = cls.to_dictionary(obj)
+            list_dicts.append(tmp_dict)
+        json_L_of_D = cls.to_json_string(list_dicts)
+
+        # build file name from class name
+        tmp = (str(cls).split(".")[-1])
+        a_class = tmp.split("'")[0]
+        a_class = "".join(ch for ch in a_class if ch.isalnum())
+        filename = a_class + ".json"
+
+        with open(filename, "w") as file:
+            num_char = file.write(json_L_of_D)
+
+
     def to_json_string(list_dictionaries):
         ''' method: to_json_string
         accepts: list of dictionaries 
