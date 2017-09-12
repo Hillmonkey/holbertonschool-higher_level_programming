@@ -15,7 +15,6 @@ class Square(Rectangle):
             '_Rectangle__height': 'height',
             '_Rectangle__x': 'x', '_Rectangle__y': 'y'}
 
-
     def __init__(self, size, x=0, y=0, id=None):
         ''' method: __init__
         '''
@@ -23,6 +22,8 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        ''' method: getter: size
+        '''
         return self.width
 
     @size.setter
@@ -56,10 +57,13 @@ class Square(Rectangle):
                 else:
                     self.height = val
                     self.width = val
-    '''
+
     def to_dictionary(self):
-        new_dict = {}
-        for key, val in Square.KV_dict.items():
-            new_dict[key] = self.__dict__[val]
+        ''' method: to_dictionary
+        return dict representation of Square object
+        '''
+        new_dict = Rectangle.to_dictionary(self)
+        new_dict["size"] = new_dict["height"]
+        del new_dict["height"]
+        del new_dict["width"]
         return new_dict
-    '''
