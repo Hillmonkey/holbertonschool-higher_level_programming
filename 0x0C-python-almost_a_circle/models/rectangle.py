@@ -135,6 +135,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         ''' method: to_dictionary
+        accepts: instance of Rectangle class (an object)
         return dict representation of Rectangle object
         '''
         new_dict = {}
