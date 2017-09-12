@@ -3,6 +3,7 @@
 '''
 import json
 
+
 class Base:
     '''class: Base
     '''
@@ -24,7 +25,7 @@ class Base:
         accepts: list of objects that inherit from  base class
         writes JSON representation to file in following format:
         '''
-        #from objects, build dict representations and put them in a new list
+        # from objects, build dict representations and put them in a new list
         list_dicts = []
         for obj in list_objs:
             tmp_dict = cls.to_dictionary(obj)
@@ -40,10 +41,29 @@ class Base:
         with open(filename, "w") as file:
             num_char = file.write(json_L_of_D)
 
+    @classmethod
+    def create(cls, **dictionary):
+        ''' method: create
+        accepts: dictionary as kwargs
+        returns: instance with all attributes set
+        '''
+        # create tmp instance of class
+        obj = cls(5, 2)
+        obj.update(**dictionary)
+        return obj
 
+    @staticmethod
+    def from_json_string(json_string):
+        '''method: from_json_string
+        accepts: JSON string
+        returns: Python Object representation of JSON string
+        '''
+        return json.loads(json_string)
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         ''' method: to_json_string
-        accepts: list of dictionaries 
+        accepts: list of dictionaries
         returns: JSON representation as a string
         '''
         ret_list = []
@@ -55,4 +75,3 @@ class Base:
         else:
             ret_list = list_dictionaries
         return json.dumps(ret_list)
-        
