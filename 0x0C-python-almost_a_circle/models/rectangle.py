@@ -8,6 +8,10 @@ from models.base import Base
 class Rectangle(Base):
     '''class: Rectangle
     '''
+    KV_dict = {'id': 'id', 'width': '_Rectangle__width',
+               'height': '_Rectangle__height',
+               'x': '_Rectangle__x', 'y': '_Rectangle__y'}
+
 
     def __init__(self, width, height, x=0, y=0, id=None):
         '''method: __init__
@@ -129,3 +133,12 @@ class Rectangle(Base):
         '''
         self.integer_GTE_zero("y", y)
         self.__y = y
+
+    def to_dictionary(self):
+        ''' method: to_dictionary
+        return Dictionary representation of Rectangle object
+        '''
+        new_dict = {}
+        for key, val in Rectangle.KV_dict.items():
+            new_dict[key] = self.__dict__[val]
+        return new_dict

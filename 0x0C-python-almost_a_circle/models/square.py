@@ -56,6 +56,10 @@ class Square(Rectangle):
                 else:
                     self.height = val
                     self.width = val
-
+    '''
     def to_dictionary(self):
-        pass
+        new_dict = {}
+        for key, val in Square.KV_dict.items():
+            new_dict[key] = self.__dict__[val]
+        return new_dict
+    '''
