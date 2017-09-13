@@ -27,16 +27,15 @@ class Base:
         '''
         # from objects, build dict representations and put them in a new list
         list_dicts = []
-        for obj in list_objs:
-            tmp_dict = cls.to_dictionary(obj)
-            list_dicts.append(tmp_dict)
-        json_L_of_D = cls.to_json_string(list_dicts)
+        if list_objs != None:
+            for obj in list_objs:
+                tmp_dict = cls.to_dictionary(obj)
+                list_dicts.append(tmp_dict)
+            json_L_of_D = cls.to_json_string(list_dicts)
+        else:
+            json_L_of_D = "[]"
 
-        # build file name from class name
-        tmp = (str(cls).split(".")[-1])
-        a_class = tmp.split("'")[0]
-        a_class = "".join(ch for ch in a_class if ch.isalnum())
-        filename = a_class + ".json"
+        filename = cls.__name__ + ".json"
 
         with open(filename, "w") as file:
             num_char = file.write(json_L_of_D)
@@ -45,16 +44,16 @@ class Base:
     def load_from_file(cls):
         '''method: load_from_file
         accepts: class type
-        returns: list of instances
+        returns: list of objects/instances
         '''
         filename = cls.__name__ + ".json"
-        # print(filename)
 
         with open(filename, 'r') as f:
             raw_str = f.read()
         dict_list = cls.from_json_string(raw_str)
-        list_of_objs = []
+
         # create list of objects
+        list_of_objs = []
         for a_dict in dict_list:
             print(a_dict)
             list_of_objs.append(cls.create(**a_dict))
