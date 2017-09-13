@@ -52,11 +52,13 @@ class Base:
 
         with open(filename, 'r') as f:
             raw_str = f.read()
-        j_list = cls.from_json_string(raw_str)
-        # print("**********")
-        # print("{}: {}".format(type(obj_list), obj_list))
-        print("type of element of list: {}".format(type(obj_list[0])))
-        # create the objects
+        dict_list = cls.from_json_string(raw_str)
+        list_of_objs = []
+        # create list of objects
+        for a_dict in dict_list:
+            print(a_dict)
+            list_of_objs.append(cls.create(**a_dict))
+        return list_of_objs
 
     @classmethod
     def create(cls, **dictionary):
@@ -64,7 +66,6 @@ class Base:
         accepts: dictionary as kwargs
         returns: instance with all attributes set
         '''
-        # create tmp instance of class
         obj = cls(5, 2)
         obj.update(**dictionary)
         return obj
@@ -72,7 +73,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         '''method: from_json_string
-        accepts: JSON string
+        accepts: json_string (string representing a list of dictionaries)
         returns: Python Object representation of JSON string
         '''
         return json.loads(json_string)
@@ -80,8 +81,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         ''' method: to_json_string
-        accepts: list of dictionaries
-        returns: JSON representation as a string
+        accepts: list_dictionaries  (list of dictionaries)
+        returns: JSON string representation list_dictionaries
         '''
         ret_list = []
         if list_dictionaries is None or len(list_dictionaries) == 0:
