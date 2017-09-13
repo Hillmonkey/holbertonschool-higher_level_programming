@@ -65,7 +65,11 @@ class Base:
         accepts: dictionary as kwargs
         returns: instance with all attributes set
         '''
-        obj = cls(5, 2)
+        print("class name: {}".format(cls.__name__))
+        if cls.__name__ == 'Rectangle':
+            obj = cls(111, 222)
+        elif cls.__name__ == 'Square':
+            obj = cls(666)
         obj.update(**dictionary)
         return obj
 
