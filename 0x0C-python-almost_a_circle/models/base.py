@@ -27,7 +27,7 @@ class Base:
         '''
         # from objects, build dict representations and put them in a new list
         list_dicts = []
-        if list_objs != None:
+        if list_objs is not None:
             for obj in list_objs:
                 tmp_dict = cls.to_dictionary(obj)
                 list_dicts.append(tmp_dict)
