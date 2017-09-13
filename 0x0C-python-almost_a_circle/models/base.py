@@ -42,6 +42,23 @@ class Base:
             num_char = file.write(json_L_of_D)
 
     @classmethod
+    def load_from_file(cls):
+        '''method: load_from_file
+        accepts: class type
+        returns: list of instances
+        '''
+        filename = cls.__name__ + ".json"
+        # print(filename)
+
+        with open(filename, 'r') as f:
+            raw_str = f.read()
+        j_list = cls.from_json_string(raw_str)
+        # print("**********")
+        # print("{}: {}".format(type(obj_list), obj_list))
+        print("type of element of list: {}".format(type(obj_list[0])))
+        # create the objects
+
+    @classmethod
     def create(cls, **dictionary):
         ''' method: create
         accepts: dictionary as kwargs
