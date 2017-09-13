@@ -133,4 +133,3 @@ class TestSquare(unittest.TestCase):
         s2.update(**s1.to_dictionary())
         self.assertEqual(s2.__str__(), "[Square] (1) 2/1 - 10")
         self.assertNotEqual(s1, s2)
-

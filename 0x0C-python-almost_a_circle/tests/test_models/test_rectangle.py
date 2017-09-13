@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """Unit tests for Rectangle class"""
 import unittest
 import sys

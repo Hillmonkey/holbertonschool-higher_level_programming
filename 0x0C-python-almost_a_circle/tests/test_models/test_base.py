@@ -72,4 +72,3 @@ class TestBase(unittest.TestCase):
                                                                '"id": 1, '
                                                                '"height": 7, '
                                                                '"y": 8}]'))
-
