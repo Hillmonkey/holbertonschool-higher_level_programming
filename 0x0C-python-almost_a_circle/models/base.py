@@ -55,7 +55,6 @@ class Base:
         # create list of objects
         list_of_objs = []
         for a_dict in dict_list:
-            print(a_dict)
             list_of_objs.append(cls.create(**a_dict))
         return list_of_objs
 
