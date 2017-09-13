@@ -43,14 +43,15 @@ class Base:
     @classmethod
     def load_from_file(cls):
         '''method: load_from_file
-        accepts: class type
+        accepts: class type - based on class name, create filename and loads
+             JSON representation of a list of objects
         returns: list of objects/instances
         '''
         filename = cls.__name__ + ".json"
 
         with open(filename, 'r') as f:
-            raw_str = f.read()
-        dict_list = cls.from_json_string(raw_str)
+            json_str = f.read()
+        dict_list = cls.from_json_string(json_str)
 
         # create list of objects
         list_of_objs = []
