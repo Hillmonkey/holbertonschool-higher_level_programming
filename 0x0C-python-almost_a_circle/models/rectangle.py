@@ -24,7 +24,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         '''method: update
-        accepts variable length list of variables, updates attributes
+        accepts variable length list of class attributes, updates attributes
+        no return value
         '''
         key_list = ['id', '_Rectangle__width', '_Rectangle__height',
                     '_Rectangle__x', '_Rectangle__y']
