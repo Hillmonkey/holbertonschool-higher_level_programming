@@ -75,7 +75,10 @@ class Base:
         accepts: json_string (string representing a list of dictionaries)
         returns: Python Object representation of JSON string
         '''
-        return json.loads(json_string)
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
 
     @staticmethod
     def to_json_string(list_dictionaries):
