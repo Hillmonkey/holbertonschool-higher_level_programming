@@ -48,10 +48,12 @@ class Base:
         returns: list of objects/instances
         '''
         filename = cls.__name__ + ".json"
-
-        with open(filename, 'r') as f:
-            json_str = f.read()
-        dict_list = cls.from_json_string(json_str)
+        try:
+            with open(filename, 'r') as f:
+                json_str = f.read()
+            dict_list = cls.from_json_string(json_str)
+        except:
+            dict_list = []
 
         # create list of objects
         list_of_objs = []
