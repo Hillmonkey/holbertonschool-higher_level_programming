@@ -1,4 +1,4 @@
-# 0x0D 0x0D-SQL_introduction
+# 0x0D-SQL_introduction
 
 ### Learning to code with [Larry Madeo](https://twitter.com/larmalade)
 
