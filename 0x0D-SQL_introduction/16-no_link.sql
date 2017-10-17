@@ -1,5 +1,5 @@
 -- this script lists names and scores without showing NULL names
-select score, name
+SELECT score, name
 FROM
 	second_table
 WHERE
