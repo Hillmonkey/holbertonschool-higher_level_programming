@@ -1,7 +1,6 @@
--- number
-SELECT score, count(*)
-	AS score, "number"
+-- display scores, grouped by count, in descending order of 
+SELECT score, count(number) AS number
 GROUP BY
 	score
 ORDER BY
-	score DESC;
+	count(number) DESC;
