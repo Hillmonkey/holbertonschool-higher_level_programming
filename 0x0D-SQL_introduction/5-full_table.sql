@@ -1,3 +1,3 @@
 -- give full description of table
 -- table is passed into script
-DESCRIBE first_table;
+SHOW COLUMNS first_table;
