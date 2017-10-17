@@ -5,4 +5,4 @@ FROM
 WHERE
 	name IS NOT NULL
 ORDER BY
-	score;
+	score DESC;
