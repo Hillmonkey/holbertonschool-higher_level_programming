@@ -2,4 +2,6 @@
 SELECT score, count(*)
 	AS score, "number"
 GROUP BY
-	score;
+	score
+ORDER BY
+	score DESC;
