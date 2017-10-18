@@ -1,5 +1,8 @@
 -- filter to cities in the state of California
-SELECT id, state_id, state
+SELECT id, name
 	FROM cities
-	ORDER BY id
-	WHERE name = 'California';
+	WHERE state_id =
+		(SELECT id
+		FROM states
+		WHERE name = 'California')
+	ORDER BY id;
