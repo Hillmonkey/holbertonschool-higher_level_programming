@@ -7,11 +7,15 @@ def roman_to_int(roman_string):
     '''function: roman_to_int
     accepts: string representation of roman number (all uppercase) (1 - 3,999)
     returns: an int
+    If the roman_string is not a string or None, return 0
     '''
     roms = {"M": 0, "D": 1, "C": 2, "L": 3, "X": 4, "V": 5, "I": 6}
     ints = [1000, 500, 100, 50, 10, 5, 1]
 
     total = 0
+
+    if roman_string is None or type(roman_string) != str:
+        return 0
 
     prev = roms[roman_string[0]]
     total = ints[prev]
