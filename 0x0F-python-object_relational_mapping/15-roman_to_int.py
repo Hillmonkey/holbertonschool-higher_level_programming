@@ -13,7 +13,15 @@ def roman_to_int(roman_string):
 
     total = 0
 
-    for roman_char in roman_string:
-        total += ints[roms[roman_char]]
-
+    prev = roms[roman_string[0]]
+    total = ints[prev]
+    for i, roman_char in enumerate(roman_string[1:]):
+        this = roms[roman_char]
+        if this >= prev:
+            total += ints[roms[roman_char]]
+        else:
+            a = ints[roms[roman_char]]
+            b = -2 * (ints[roms[roman_string[i]]])
+            total += a + b
+        prev = this
     return total
