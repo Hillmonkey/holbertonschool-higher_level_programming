@@ -7,7 +7,7 @@ this module contains the class Rectangle ...
 
 class Rectangle:
     '''class: Rectangle
-    this is an empty class, further additions in subsequent assignments
+    this is a furter refinement of the Rectangle class
     '''
 
     number_of_instances = 0
