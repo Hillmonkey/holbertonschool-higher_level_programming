@@ -10,7 +10,6 @@ output: various info from HTTP response
 if __name__ == "__main__":
 
     req = Request('https://intranet.hbtn.io/status')
-    # response = urlopen(reg)
     with urlopen(req) as response:
         the_page = response.read()
         print("Body response:")
