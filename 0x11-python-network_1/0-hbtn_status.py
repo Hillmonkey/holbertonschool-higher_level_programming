@@ -3,6 +3,7 @@
 from urllib.request import Request, urlopen
 
 '''module: 0-hbtn_status
+output: various info from HTTP response
 '''
 
 
