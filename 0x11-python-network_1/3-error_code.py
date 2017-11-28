@@ -16,6 +16,6 @@ if __name__ == "__main__":
     try:
         req = Request(url)
         with urlopen(req) as response:
-            response.read().decode('utf-8')
+            print(response.read().decode('utf-8'))
     except URLError:
         pass
