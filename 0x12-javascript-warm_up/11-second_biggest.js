@@ -6,6 +6,5 @@ if (arraySize < 2) {
 } else {
   let subArray = process.argv.slice(2, process.argv.length);
   subArray.sort().reverse();
-  console.log(subArray);
   console.log(subArray[1]);
 }
