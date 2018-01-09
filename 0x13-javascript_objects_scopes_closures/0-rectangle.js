@@ -1,6 +1,6 @@
 #!/usr/bin/node
 'use strict';
-var Rectangle = class Rectangle {
+const Rectangle = class Rectangle {
   constructor () {
   }
 };
