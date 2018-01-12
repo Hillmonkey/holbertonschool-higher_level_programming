@@ -1,7 +1,2 @@
-var hdr = document.querySelector('header');
-
-hdr.addEventListener('click', makeItRed);
-
-function makeItRed () {
-  hdr.style.color = 'red';
-}
+let header = document.querySelector('header');
+header.style.color = 'red';
